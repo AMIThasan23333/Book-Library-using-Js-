@@ -103,7 +103,7 @@ const createCard = (book) => {
     />
     <div class="button-container">
       <button onclick="addToWishlist('${book.id}')" class="button"><i class="fa-solid fa-heart"></i></button>
-      <button onclick="AddToCart" class="button">Add To Cart</button>
+      <button onclick="AddToCart('${book.id}')" class="button">Add To Cart</button>
     </div>
   </div>
   <div class="info-container">
@@ -120,7 +120,7 @@ const createCard = (book) => {
 
 showBooks(bookList);
 
-const addToCart = (id) => {
+const AddToCart = (id) => {
   cart.push(id);
 };
 
