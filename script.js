@@ -144,8 +144,11 @@ const displayWishlist = () => {
   const wishlist = getWishlistItems();
   console.log(wishlist);
 
+
+  const wishListContainer =  document.getElementById("wishlist")
+  wishListContainer.innerHTML = ' '
   wishlist.forEach((book) => {
     const div = createCard(book);
-    document.getElementById("wishlist").appendChild(div);
+    wishListContainer.appendChild(div);
   });
 };
