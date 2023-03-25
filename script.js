@@ -91,7 +91,9 @@ const createCard = (book) => {
   const div = document.createElement("div");
   div.classList.add("card");
 
-  let overview = book.overview;
+  let overview = book.overview.substring(0,60);
+
+//  t ShortOverView = overview.substrings(0,60)
 
   div.innerHTML = `
   <div class="image-container">
@@ -107,7 +109,7 @@ const createCard = (book) => {
   <div class="info-container">
     <h1>${book.name}</h1>
     <p>
-      ${overview}
+      ${overview} ...
     </p>
   </div>
 
@@ -142,7 +144,7 @@ const displayWishlist = () => {
   const wishlist = getWishlistItems();
   console.log(wishlist);
 
-  bookList.forEach((book) => {
+  wishlist.forEach((book) => {
     const div = createCard(book);
     document.getElementById("wishlist").appendChild(div);
   });
